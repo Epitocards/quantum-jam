@@ -11,8 +11,13 @@ enum playerState {
 
 @export var other : Player
 
+signal in_endzone(value : bool)
+
 var state : playerState
 var target_position : Vector2
+
+var winning : bool = false
+var should_send : bool = false
 
 func _ready() -> void:
 	state = playerState.IDLE
@@ -52,3 +57,17 @@ func _physics_process(delta: float) -> void:
 		self.global_position = self.global_position.move_toward(target_position, 2)
 		if self.global_position == target_position:
 			state = playerState.IDLE
+			if should_send:
+				print("bisous")
+				should_send = false
+				in_endzone.emit(winning)
+				winning = false
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	winning = true
+	should_send = true
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	winning = false
+	should_send = true

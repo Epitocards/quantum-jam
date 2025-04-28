@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=4 uid="uid://bqgf8piyap3os"]
+[gd_scene load_steps=7 format=4 uid="uid://bqgf8piyap3os"]
 
 [ext_resource type="Texture2D" uid="uid://dr8a7hm3lcc7p" path="res://assets/test_tileset.png" id="1_2venv"]
 [ext_resource type="PackedScene" uid="uid://chc6laujsslbi" path="res://scenes/player.tscn" id="2_paw1w"]
+[ext_resource type="PackedScene" uid="uid://nxjco4y76ea1" path="res://scenes/end_zone.tscn" id="3_j6w7d"]
+[ext_resource type="Script" uid="uid://b7nfqj4p2tlkc" path="res://scenes/game_manager.gd" id="4_x4b8f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_paw1w"]
 texture = ExtResource("1_2venv")
@@ -28,3 +30,15 @@ other = NodePath("../Player2")
 [node name="Player2" parent="." node_paths=PackedStringArray("other") instance=ExtResource("2_paw1w")]
 position = Vector2(368, 112)
 other = NodePath("../Player")
+
+[node name="end_zone" parent="." instance=ExtResource("3_j6w7d")]
+position = Vector2(80, 112)
+
+[node name="end_zone2" parent="." instance=ExtResource("3_j6w7d")]
+position = Vector2(304, 112)
+
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource("4_x4b8f")
+
+[connection signal="in_endzone" from="Player" to="GameManager" method="_on_player_1_in_endzone"]
+[connection signal="in_endzone" from="Player2" to="GameManager" method="_on_player_2_in_endzone"]
