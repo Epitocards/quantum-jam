@@ -26,9 +26,10 @@ func _physics_process(delta: float) -> void:
 			direction = Vector2.RIGHT
 		target_position = self.global_position + direction * TILESIZE
 		$RayCast2D.target_position = direction * TILESIZE
+		$RayCast2D.force_raycast_update()
 		if !$RayCast2D.is_colliding():
 			state = playerState.MOVING
 	elif state == playerState.MOVING:
-		self.global_position = self.global_position.move_toward(target_position, 0.25)
+		self.global_position = self.global_position.move_toward(target_position, 4)
 		if self.global_position == target_position:
 			state = playerState.IDLE
