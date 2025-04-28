@@ -16,20 +16,26 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g2els")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qhqgy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("1_3vyb7")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhqgy")
+}],
+"loop": true,
+"name": &"moving",
 "speed": 5.0
 }]
 
-[node name="Player" type="AnimatedSprite2D"]
-sprite_frames = SubResource("SpriteFrames_dqkch")
+[node name="Player" type="Node2D"]
 script = ExtResource("2_g2els")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dqkch")
+animation = &"moving"
+autoplay = "idle"
