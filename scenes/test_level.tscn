@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=4 uid="uid://bqgf8piyap3os"]
+[gd_scene load_steps=9 format=4 uid="uid://bqgf8piyap3os"]
 
 [ext_resource type="Texture2D" uid="uid://dr8a7hm3lcc7p" path="res://assets/test_tileset.png" id="1_2venv"]
 [ext_resource type="PackedScene" uid="uid://chc6laujsslbi" path="res://scenes/player.tscn" id="2_paw1w"]
 [ext_resource type="PackedScene" uid="uid://nxjco4y76ea1" path="res://scenes/end_zone.tscn" id="3_j6w7d"]
 [ext_resource type="Script" uid="uid://b7nfqj4p2tlkc" path="res://scenes/game_manager.gd" id="4_x4b8f"]
+[ext_resource type="PackedScene" uid="uid://weqxyu3qxpgy" path="res://scenes/win_menu.tscn" id="5_qcd3b"]
 [ext_resource type="PackedScene" uid="uid://by0ykckfaxqwu" path="res://scenes/movement_manager.tscn" id="5_tmr53"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_paw1w"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qcd3b"]
 texture = ExtResource("1_2venv")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -16,7 +17,7 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_j6w7d"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_paw1w")
+sources/0 = SubResource("TileSetAtlasSource_qcd3b")
 
 [node name="test_level" type="Node2D"]
 
@@ -38,5 +39,12 @@ position = Vector2(304, 112)
 
 [node name="GameManager" type="Node2D" parent="."]
 script = ExtResource("4_x4b8f")
+
+[node name="WinMenu" parent="GameManager" instance=ExtResource("5_qcd3b")]
+anchors_preset = 15
+offset_left = 1.0
+offset_right = 1153.0
+offset_bottom = 648.0
+next_room = "uid://b5obr77iqh6vq"
 
 [node name="MovementManager" parent="." instance=ExtResource("5_tmr53")]

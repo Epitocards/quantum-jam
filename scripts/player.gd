@@ -34,6 +34,9 @@ func move(direction : Vector2) -> bool:
 	else:
 		return false
 
+func pause() -> void:
+	state = PlayerState.PlayerState.PAUSED
+
 func _physics_process(delta: float) -> void:
 	if state == PlayerState.PlayerState.MOVING:
 		self.global_position = self.global_position.move_toward(target_position, 2)

@@ -4,4 +4,5 @@ class_name PlayerState
 enum PlayerState {
 	IDLE,
 	MOVING,
+	PAUSED,
 }
