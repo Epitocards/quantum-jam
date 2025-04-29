@@ -40,7 +40,6 @@ func _physics_process(delta: float) -> void:
 		if self.global_position == target_position:
 			state = PlayerState.PlayerState.IDLE
 			if should_send:
-				print("bisous")
 				should_send = false
 				in_endzone.emit(winning)
 
