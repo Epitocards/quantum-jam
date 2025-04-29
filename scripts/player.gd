@@ -4,11 +4,13 @@ class_name Player
 const TILESIZE = 32
 
 signal in_endzone(value : bool)
+signal in_slippery_ground(value: bool)
 
 var state : PlayerState.PlayerState
 var target_position : Vector2
 
 var winning : bool = false
+var sliding : bool = false 
 var should_send : bool = false
 
 func _ready() -> void:
@@ -42,11 +44,18 @@ func _physics_process(delta: float) -> void:
 			if should_send:
 				should_send = false
 				in_endzone.emit(winning)
+			if sliding:
+				in_slippery_ground.emit(sliding)
+				sliding = false
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	winning = true
-	should_send = true
+	if area.name == "end_zone" or area.name == "end_zone2":
+		winning = true
+		should_send = true
+	if area.is_in_group("slippery_grounds"):
+		sliding = true
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
-	winning = false
-	should_send = true
+	if area.name == "end_zone" or area.name == "end_zone2":
+		winning = false
+		should_send = true
