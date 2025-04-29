@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccy162oaar87w"]
+
+[ext_resource type="Texture2D" uid="uid://creqxjta2sjnx" path="res://assets/test_moving_item.png" id="1_sx8kh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i8cay"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sx8kh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_303cx"]
+size = Vector2(30, 30)
+
+[node name="MovableItem" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_i8cay")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 45)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_303cx")
