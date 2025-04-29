@@ -32,7 +32,13 @@ func move(direction : Vector2) -> bool:
 		state = PlayerState.PlayerState.MOVING
 		return true
 	else:
-		return false
+		var collider = $RayCast2D.get_collider()
+		if collider and collider.get_parent() is MovableItem:
+			var box = collider.get_parent() as MovableItem
+			if box.try_push(direction):
+				state = PlayerState.PlayerState.MOVING
+				return true
+	return false
 
 func pause() -> void:
 	state = PlayerState.PlayerState.PAUSED
