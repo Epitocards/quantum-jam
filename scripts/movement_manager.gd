@@ -24,6 +24,8 @@ func _physics_process(delta: float) -> void:
 			direction = Vector2.LEFT
 		elif Input.is_action_pressed("right"):
 			direction = Vector2.RIGHT
+		elif Input.is_action_just_pressed("reload"):
+			get_tree().reload_current_scene()
 		else:
 			return
 		var count_step = true
