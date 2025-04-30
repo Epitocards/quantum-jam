@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=4 uid="uid://bqgf8piyap3os"]
+[gd_scene load_steps=10 format=4 uid="uid://bqgf8piyap3os"]
 
 [ext_resource type="Texture2D" uid="uid://p4n60ttn3j75" path="res://assets/test_tileset.png" id="1_2venv"]
 [ext_resource type="PackedScene" uid="uid://chc6laujsslbi" path="res://scenes/player.tscn" id="2_paw1w"]
 [ext_resource type="PackedScene" uid="uid://nxjco4y76ea1" path="res://scenes/end_zone.tscn" id="3_j6w7d"]
 [ext_resource type="Script" uid="uid://b7nfqj4p2tlkc" path="res://scenes/game_manager.gd" id="4_x4b8f"]
 [ext_resource type="PackedScene" uid="uid://weqxyu3qxpgy" path="res://scenes/win_menu.tscn" id="5_qcd3b"]
+[ext_resource type="PackedScene" uid="uid://1cv4gtvjdab4" path="res://scenes/Key.tscn" id="6_88ety"]
+[ext_resource type="PackedScene" uid="uid://t53h15ufvk6c" path="res://scenes/Door.tscn" id="7_ahbqi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qcd3b"]
 texture = ExtResource("1_2venv")
@@ -38,6 +40,24 @@ position = Vector2(80, 112)
 position = Vector2(304, 112)
 
 [node name="UI" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="WinMenu" parent="UI" instance=ExtResource("5_qcd3b")]
 next_room = "uid://b5obr77iqh6vq"
+
+[node name="Key" parent="." instance=ExtResource("6_88ety")]
+position = Vector2(112, 208)
+
+[node name="Door" parent="." instance=ExtResource("7_ahbqi")]
+position = Vector2(464, 112)
+
+[node name="Door2" parent="." instance=ExtResource("7_ahbqi")]
+position = Vector2(400, 208)
+door_id = "door1"
+
+[node name="Door3" parent="." instance=ExtResource("7_ahbqi")]
+position = Vector2(304, 240)
+
+[node name="Key2" parent="." instance=ExtResource("6_88ety")]
+position = Vector2(176, 240)
+key_id = "door1"
