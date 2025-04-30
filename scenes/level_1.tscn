@@ -41,4 +41,4 @@ position = Vector2(368, 48)
 
 [node name="WinMenu" parent="UI" instance=ExtResource("5_e3sih")]
 visible = false
-next_room = "uid://b5obr77iqh6vq"
+next_room = "uid://h2ueu24de7mh"

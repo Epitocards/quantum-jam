@@ -1,0 +1,72 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://dn13sb3gn84pr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7hsyk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wj7yv"]
+bg_color = Color(0, 0.449167, 0.55, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0.68, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 20.0
+expand_margin_right = 20.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hsyk"]
+bg_color = Color(0, 0.664841, 0.819657, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0.952941, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 20.0
+expand_margin_right = 20.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_riva4"]
+bg_color = Color(0, 0.816667, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0.952941, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 20.0
+expand_margin_right = 20.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pfggn"]
+bg_color = Color(0.572549, 0.517647, 1, 1)
+border_width_left = 50
+border_width_top = 50
+border_width_right = 50
+border_width_bottom = 50
+border_color = Color(0.808782, 4.81308e-08, 0.380553, 1)
+border_blend = true
+
+[resource]
+Button/font_sizes/font_size = 48
+Button/styles/focus = SubResource("StyleBoxEmpty_7hsyk")
+Button/styles/hover = SubResource("StyleBoxFlat_wj7yv")
+Button/styles/hover_pressed = null
+Button/styles/normal = SubResource("StyleBoxFlat_7hsyk")
+Button/styles/pressed = SubResource("StyleBoxFlat_riva4")
+Button/styles/pressed_mirrored = SubResource("StyleBoxFlat_riva4")
+Label/colors/font_color = Color(0.902855, 0.902855, 7.70092e-07, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0.898039)
+Label/font_sizes/font_size = 64
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_pfggn")
+VBoxContainer/constants/separation = 8

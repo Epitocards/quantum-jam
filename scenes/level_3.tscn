@@ -42,7 +42,7 @@ position = Vector2(368, 48)
 
 [node name="WinMenu" parent="UI" instance=ExtResource("5_ha73p")]
 visible = false
-next_room = "uid://b5obr77iqh6vq"
+next_room = "uid://furilopq0n5w"
 
 [node name="slippery_ground" parent="." instance=ExtResource("6_p6vls")]
 position = Vector2(240, 272)
