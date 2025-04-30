@@ -42,7 +42,7 @@ position = Vector2(368, 48)
 
 [node name="WinMenu" parent="UI" instance=ExtResource("5_6cvei")]
 visible = false
-next_room = "uid://b5obr77iqh6vq"
+next_room = "uid://dioil387b6umg"
 
 [node name="MovableItem" parent="." instance=ExtResource("6_wo48x")]
 position = Vector2(240, 272)
