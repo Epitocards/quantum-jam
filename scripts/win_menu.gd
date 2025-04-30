@@ -6,7 +6,6 @@ func _ready() -> void:
 	visible = false
 
 func show_menu() -> void:
-	print("c'est le menu")
 	visible = true
 
 func _on_play_button_pressed() -> void:

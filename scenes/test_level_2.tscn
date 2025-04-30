@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=4 uid="uid://b5obr77iqh6vq"]
+[gd_scene load_steps=8 format=4 uid="uid://b5obr77iqh6vq"]
 
 [ext_resource type="Script" uid="uid://b7nfqj4p2tlkc" path="res://scenes/game_manager.gd" id="1_5h3no"]
 [ext_resource type="Texture2D" uid="uid://p4n60ttn3j75" path="res://assets/test_tileset.png" id="2_slk0g"]
 [ext_resource type="PackedScene" uid="uid://nxjco4y76ea1" path="res://scenes/end_zone.tscn" id="3_0gxo2"]
-[ext_resource type="PackedScene" uid="uid://by0ykckfaxqwu" path="res://scenes/movement_manager.tscn" id="4_gpf5q"]
 [ext_resource type="PackedScene" uid="uid://chc6laujsslbi" path="res://scenes/player.tscn" id="5_52hxo"]
 [ext_resource type="PackedScene" uid="uid://weqxyu3qxpgy" path="res://scenes/win_menu.tscn" id="6_6wmoe"]
 
@@ -31,8 +30,6 @@ position = Vector2(176, 176)
 
 [node name="end_zone2" parent="." instance=ExtResource("3_0gxo2")]
 position = Vector2(208, 368)
-
-[node name="MovementManager" parent="." instance=ExtResource("4_gpf5q")]
 
 [node name="Player" parent="." instance=ExtResource("5_52hxo")]
 position = Vector2(368, 80)
