@@ -40,5 +40,4 @@ position = Vector2(304, 112)
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="WinMenu" parent="UI" instance=ExtResource("5_qcd3b")]
-anchors_preset = 15
 next_room = "uid://b5obr77iqh6vq"

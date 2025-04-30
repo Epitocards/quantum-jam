@@ -4,7 +4,6 @@ class_name Player
 const TILESIZE = 32
 
 signal in_endzone(value : bool)
-signal in_slippery_ground(value: bool)
 
 var state : PlayerState.PlayerState
 var target_position : Vector2
@@ -12,6 +11,7 @@ var target_position : Vector2
 var winning : bool = false
 var sliding : bool = false 
 var should_send : bool = false
+var dir : Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	state = PlayerState.PlayerState.IDLE
@@ -23,6 +23,7 @@ func _process(delta: float) -> void:
 		$AnimatedSprite2D.play("idle")
 
 func move(direction : Vector2) -> bool:
+	dir = direction
 	if direction == Vector2.LEFT:
 		$AnimatedSprite2D.flip_h = false
 	elif direction == Vector2.RIGHT:
@@ -54,17 +55,17 @@ func _physics_process(delta: float) -> void:
 				should_send = false
 				in_endzone.emit(winning)
 			if sliding:
-				in_slippery_ground.emit(sliding)
 				sliding = false
+				self.move(dir)
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.name == "end_zone" or area.name == "end_zone2":
+	if area.is_in_group("endzone"):
 		winning = true
 		should_send = true
 	if area.is_in_group("slippery_grounds"):
 		sliding = true
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
-	if area.name == "end_zone" or area.name == "end_zone2":
+	if area.is_in_group("endzone"):
 		winning = false
 		should_send = true

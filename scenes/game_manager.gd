@@ -10,15 +10,8 @@ func  _ready() -> void:
 	for node in nodes:
 		var casted : Player = node as Player
 		if (casted):
-			casted.in_slippery_ground.connect(_on_player_in_slippery_ground)
 			casted.in_endzone.connect(_on_player_in_endzone)
 			players.append(casted)
-
-func _on_player_in_slippery_ground(value: bool) -> void:
-	if value:
-		for p in players:
-			if p.sliding: 
-				p.move(direction)
 
 func _on_player_in_endzone(value: bool) -> void:
 	if value:

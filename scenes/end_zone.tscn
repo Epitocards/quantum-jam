@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8epvt"]
 size = Vector2(23, 24)
 
-[node name="end_zone" type="Area2D"]
+[node name="end_zone" type="Area2D" groups=["endzone"]]
 collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
