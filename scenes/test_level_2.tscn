@@ -37,8 +37,7 @@ position = Vector2(368, 80)
 [node name="Player2" parent="." instance=ExtResource("5_52hxo")]
 position = Vector2(80, 336)
 
-[node name="WinMenu" parent="." instance=ExtResource("6_6wmoe")]
-anchors_preset = 15
-offset_right = 1152.0
-offset_bottom = 648.0
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="WinMenu" parent="UI" instance=ExtResource("6_6wmoe")]
 next_room = "uid://bqgf8piyap3os"

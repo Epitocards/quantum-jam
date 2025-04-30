@@ -31,7 +31,7 @@ func _on_player_in_endzone(value: bool) -> void:
 func win() -> void:
 	for p in players:
 		p.pause()
-	$WinMenu.show_menu()
+	$UI/WinMenu.show_menu()
 
 func player_can_move(p : Player) -> bool:
 	return p.state == PlayerState.PlayerState.IDLE
