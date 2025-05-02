@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://bqgf8piyap3os"]
+[gd_scene load_steps=13 format=4 uid="uid://bqgf8piyap3os"]
 
 [ext_resource type="Texture2D" uid="uid://p4n60ttn3j75" path="res://assets/test_tileset.png" id="1_2venv"]
 [ext_resource type="PackedScene" uid="uid://chc6laujsslbi" path="res://scenes/player.tscn" id="2_paw1w"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://weqxyu3qxpgy" path="res://scenes/win_menu.tscn" id="5_qcd3b"]
 [ext_resource type="PackedScene" uid="uid://1cv4gtvjdab4" path="res://scenes/Key.tscn" id="6_88ety"]
 [ext_resource type="PackedScene" uid="uid://t53h15ufvk6c" path="res://scenes/Door.tscn" id="7_ahbqi"]
+[ext_resource type="PackedScene" uid="uid://bkj6n24joqk2v" path="res://scenes/PressurePlate.tscn" id="8_ahbqi"]
+[ext_resource type="PackedScene" uid="uid://3531u81l6eo2" path="res://scenes/movable_item.tscn" id="9_7gix3"]
+[ext_resource type="PackedScene" uid="uid://c8mak1hoj3doe" path="res://scenes/connection_visualizer.tscn" id="10_4asn1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qcd3b"]
 texture = ExtResource("1_2venv")
@@ -61,3 +64,27 @@ position = Vector2(304, 240)
 [node name="Key2" parent="." instance=ExtResource("6_88ety")]
 position = Vector2(176, 240)
 key_id = "door1"
+
+[node name="PressurePlate" parent="." instance=ExtResource("8_ahbqi")]
+position = Vector2(144, 48)
+door_id = "door_press"
+
+[node name="Door4" parent="." instance=ExtResource("7_ahbqi")]
+position = Vector2(368, 48)
+door_id = "door_press"
+lock_mode = 1
+
+[node name="Door5" parent="." instance=ExtResource("7_ahbqi")]
+position = Vector2(496, 48)
+door_id = "door_press"
+lock_mode = 2
+
+[node name="Key3" parent="." instance=ExtResource("6_88ety")]
+position = Vector2(48, 80)
+key_id = "door_press"
+
+[node name="MovableItem" parent="." instance=ExtResource("9_7gix3")]
+position = Vector2(144, 80)
+
+[node name="ConnectionVisualizer" parent="." instance=ExtResource("10_4asn1")]
+draw_in_game = true
