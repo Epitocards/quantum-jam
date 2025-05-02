@@ -9,3 +9,7 @@ func _ready() -> void:
 		else:
 			(choice as levelChoice).show_for_score(data[i], i+1)
 		i += 1
+
+
+func _on_leave_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

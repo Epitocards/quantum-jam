@@ -15,11 +15,12 @@ var dir : Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	state = PlayerState.PlayerState.IDLE
+	target_position = global_position
 
 func _process(delta: float) -> void:
 	if state == PlayerState.PlayerState.MOVING:
 		$AnimatedSprite2D.play("moving")
-	else:
+	elif state == PlayerState.PlayerState.IDLE:
 		$AnimatedSprite2D.play("idle")
 
 func move(direction : Vector2) -> bool:
@@ -41,10 +42,17 @@ func move(direction : Vector2) -> bool:
 			if box.try_push(direction):
 				state = PlayerState.PlayerState.MOVING
 				return true
+	target_position = global_position
 	return false
 
 func pause() -> void:
 	state = PlayerState.PlayerState.PAUSED
+
+func unpause() -> void:
+	if self.global_position == target_position:
+		state = PlayerState.PlayerState.IDLE
+	else:
+		state = PlayerState.PlayerState.MOVING
 
 func _physics_process(delta: float) -> void:
 	if state == PlayerState.PlayerState.MOVING:

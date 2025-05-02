@@ -14,6 +14,10 @@ config/name="OneLocation"
 run/main_scene="uid://furilopq0n5w"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
+[autoload]
+
+Saving="*res://scripts/saving.gd"
+
 [display]
 
 window/size/viewport_width=640
