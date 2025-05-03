@@ -9,8 +9,8 @@ class_name Star extends TextureRect
 
 var default_transform : Transform2D
 
-var ON_STAR_TEXTURE : AtlasTexture = preload("res://assets/star_on.tres")
-var OFF_STAR_TEXTURE : AtlasTexture = preload("res://assets/star_off.tres")
+var ON_STAR_TEXTURE : AtlasTexture = preload("res://assets/textures/star_on.tres")
+var OFF_STAR_TEXTURE : AtlasTexture = preload("res://assets/textures/star_off.tres")
 
 
 func animate_star(_a : bool) -> void:

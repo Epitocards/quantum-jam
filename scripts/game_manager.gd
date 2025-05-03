@@ -85,7 +85,6 @@ func _process(delta: float) -> void:
 			count_step = count_step or buffer
 		if count_step:
 			step_count += 1
-			print("step")
 
 func pause() -> void:
 	for p in players:

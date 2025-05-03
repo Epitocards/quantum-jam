@@ -11,24 +11,40 @@ var target_position : Vector2
 var winning : bool = false
 var sliding : bool = false 
 var should_send : bool = false
-var dir : Vector2 = Vector2.ZERO
+var dir : Vector2 = Vector2.DOWN
+var paused : bool = false
 
 func _ready() -> void:
 	state = PlayerState.PlayerState.IDLE
 	target_position = global_position
 
 func _process(delta: float) -> void:
-	if state == PlayerState.PlayerState.MOVING:
-		$AnimatedSprite2D.play("moving")
-	elif state == PlayerState.PlayerState.IDLE:
-		$AnimatedSprite2D.play("idle")
+	if paused:
+		$AnimatedSprite2D.pause()
+		return
+	if dir == Vector2.DOWN:
+		if state == PlayerState.PlayerState.IDLE:
+			$AnimatedSprite2D.play("idle_down")
+		else:
+			$AnimatedSprite2D.play("walk_down")
+	elif dir == Vector2.UP:
+		if state == PlayerState.PlayerState.IDLE:
+			$AnimatedSprite2D.play("idle_up")
+		else:
+			$AnimatedSprite2D.play("walk_up")
+	elif dir == Vector2.LEFT:
+		if state == PlayerState.PlayerState.IDLE:
+			$AnimatedSprite2D.play("idle_left")
+		else:
+			$AnimatedSprite2D.play("walk_left")
+	elif dir == Vector2.RIGHT:
+		if state == PlayerState.PlayerState.IDLE:
+			$AnimatedSprite2D.play("idle_right")
+		else:
+			$AnimatedSprite2D.play("walk_right")
 
 func move(direction : Vector2) -> bool:
 	dir = direction
-	if direction == Vector2.LEFT:
-		$AnimatedSprite2D.flip_h = false
-	elif direction == Vector2.RIGHT:
-		$AnimatedSprite2D.flip_h = true
 	target_position = self.global_position + direction * TILESIZE
 	$RayCast2D.target_position = direction * TILESIZE
 	$RayCast2D.force_raycast_update()
@@ -47,12 +63,14 @@ func move(direction : Vector2) -> bool:
 
 func pause() -> void:
 	state = PlayerState.PlayerState.PAUSED
+	paused = true
 
 func unpause() -> void:
 	if self.global_position == target_position:
 		state = PlayerState.PlayerState.IDLE
 	else:
 		state = PlayerState.PlayerState.MOVING
+	paused = false
 
 func _physics_process(delta: float) -> void:
 	if state == PlayerState.PlayerState.MOVING:

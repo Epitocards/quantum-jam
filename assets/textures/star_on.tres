@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dbj5dtjaidnnv"]
+
+[ext_resource type="Texture2D" uid="uid://d1h5jcm02i473" path="res://assets/star_on.svg" id="1_bosow"]
+
+[resource]
+atlas = ExtResource("1_bosow")
+margin = Rect2(0, 0, 10, 0)

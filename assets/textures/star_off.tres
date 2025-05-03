@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://eagkcy1yi0eg"]
+
+[ext_resource type="Texture2D" uid="uid://be5dp72nuhv67" path="res://assets/star_off.svg" id="1_mmdnm"]
+
+[resource]
+atlas = ExtResource("1_mmdnm")
+margin = Rect2(0, 0, 10, 0)

@@ -1,13 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://weqxyu3qxpgy"]
+[gd_scene load_steps=9 format=3 uid="uid://weqxyu3qxpgy"]
 
 [ext_resource type="Script" uid="uid://deoa2pnf2ls1s" path="res://scripts/win_menu.gd" id="1_7shsi"]
 [ext_resource type="Texture2D" uid="uid://dmd0gfjstmkmc" path="res://assets/menu_icons.png" id="1_ki55t"]
 [ext_resource type="Theme" uid="uid://d12u73fhyywec" path="res://themes/game_menus.tres" id="2_dmaew"]
 [ext_resource type="PackedScene" uid="uid://cv78xn6f4lnyh" path="res://scenes/stars.tscn" id="3_dmaew"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7shsi"]
-atlas = ExtResource("1_ki55t")
-region = Rect2(0, 0, 32, 32)
+[ext_resource type="Texture2D" uid="uid://2s4pcm06p4r" path="res://assets/textures/play_button.tres" id="4_1xbon"]
+[ext_resource type="Texture2D" uid="uid://c6cdkaue3vss6" path="res://assets/textures/play_button_hover.tres" id="5_xtbbn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ah3fa"]
 atlas = ExtResource("1_ki55t")
@@ -61,11 +59,12 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="TextureButton" type="TextureButton" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="play" type="TextureButton" parent="PanelContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 theme = ExtResource("2_dmaew")
-texture_normal = SubResource("AtlasTexture_7shsi")
+texture_normal = ExtResource("4_1xbon")
+texture_hover = ExtResource("5_xtbbn")
 stretch_mode = 0
 
 [node name="TextureButton3" type="TextureButton" parent="PanelContainer/VBoxContainer/HBoxContainer"]
@@ -80,6 +79,6 @@ layout_mode = 2
 texture_normal = SubResource("AtlasTexture_dmaew")
 stretch_mode = 0
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/TextureButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/play" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/TextureButton3" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/TextureButton2" to="." method="_on_leave_button_pressed"]

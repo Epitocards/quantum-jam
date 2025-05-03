@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bvlirmtwcb8p7"]
 
-[ext_resource type="Texture2D" uid="uid://dpysf2lpwarfp" path="res://assets/test_slippery_ground.png" id="1_l8tq7"]
+[ext_resource type="Texture2D" uid="uid://bnyw4ew6h0rhd" path="res://assets/slippery_grounds.png" id="1_l8tq7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_axfrd"]
 
