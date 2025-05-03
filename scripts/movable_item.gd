@@ -11,7 +11,7 @@ var current_direction : Vector2
 func _ready() -> void:
 	target_position = global_position
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if state == PlayerState.PlayerState.MOVING:
 		global_position = global_position.move_toward(target_position, 2)
 		if global_position == target_position:
