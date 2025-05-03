@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8mak1hoj3doe"]
+
+[ext_resource type="Script" uid="uid://bpy0l16wlshum" path="res://scripts/connection_visualizer.gd" id="1_pej3m"]
+
+[node name="ConnectionVisualizer" type="Node2D"]
+script = ExtResource("1_pej3m")

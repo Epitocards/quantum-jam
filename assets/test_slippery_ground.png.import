@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3m65ffrskw34"
-path="res://.godot/imported/test_player.png-20bc58b5a2262680a4674f040be9f4c7.ctex"
+uid="uid://dpysf2lpwarfp"
+path="res://.godot/imported/test_slippery_ground.png-fb763947b6afa1946af52265d055cd88.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/test_player.png"
-dest_files=["res://.godot/imported/test_player.png-20bc58b5a2262680a4674f040be9f4c7.ctex"]
+source_file="res://assets/test_slippery_ground.png"
+dest_files=["res://.godot/imported/test_slippery_ground.png-fb763947b6afa1946af52265d055cd88.ctex"]
 
 [params]
 

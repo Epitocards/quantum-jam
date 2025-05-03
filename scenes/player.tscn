@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://chc6laujsslbi"]
+[gd_scene load_steps=7 format=3 uid="uid://chc6laujsslbi"]
 
-[ext_resource type="Texture2D" uid="uid://55xvl8b5lc7t" path="res://assets/test_player.png" id="1_3vyb7"]
+[ext_resource type="Texture2D" uid="uid://c3m65ffrskw34" path="res://assets/test_player.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://di1b0snuppxhw" path="res://scripts/player.gd" id="2_g2els"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
@@ -16,20 +16,39 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g2els")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qhqgy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("1_3vyb7")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhqgy")
+}],
+"loop": true,
+"name": &"moving",
 "speed": 5.0
 }]
 
-[node name="Player" type="AnimatedSprite2D"]
-sprite_frames = SubResource("SpriteFrames_dqkch")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(28, 29)
+
+[node name="Player" type="Node2D" groups=["player"]]
+z_index = 5
 script = ExtResource("2_g2els")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dqkch")
+animation = &"moving"
+autoplay = "idle"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_g2els")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
