@@ -17,7 +17,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_303cx"]
 size = Vector2(30, 30)
 
-[node name="MovableItem" type="Node2D"]
+[node name="MovableItem" type="Node2D" groups=["movableItem"]]
 script = ExtResource("1_i8cay")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -26,7 +26,7 @@ sprite_frames = SubResource("SpriteFrames_i8cay")
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(0, 45)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["movableItem"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("RectangleShape2D_303cx")
