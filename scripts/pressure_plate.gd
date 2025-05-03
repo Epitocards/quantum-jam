@@ -23,15 +23,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.get_parent() is MovableItem:
-		var still_activated = false
-		var bodies = $Area2D.get_overlapping_bodies()
-		for overlapping_body in bodies:
-			var over_body = overlapping_body.get_parent()
-			if over_body is MovableItem:
-				still_activated = true
-				break
-		if not still_activated:
-			deactivate()
+		check_activation_state()
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
@@ -41,16 +33,29 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.get_parent().is_in_group("player"):
-		var still_activated = false
+		check_activation_state()
+
+
+func check_activation_state() -> void:
+	var still_activated = false
+	var areas = $Area2D.get_overlapping_areas()
+	for overlapping_area in areas:
+		print(areas)
+		var over_area = overlapping_area.get_parent()
+		if over_area.is_in_group("player"):
+			still_activated = true
+			break
+	
+	if not still_activated:
 		var bodies = $Area2D.get_overlapping_bodies()
 		for overlapping_body in bodies:
 			var over_body = overlapping_body.get_parent()
-			if over_body.is_in_group("player"):
+			if over_body is MovableItem:
 				still_activated = true
 				break
-		if not still_activated:
-			deactivate()
-
+	
+	if not still_activated:
+		deactivate()
 
 func activate() -> void:
 	if not is_activated:
