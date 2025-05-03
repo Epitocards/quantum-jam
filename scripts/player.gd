@@ -72,8 +72,15 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		should_send = true
 	if area.is_in_group("slippery_grounds"):
 		sliding = true
+	if area.is_in_group("enemy"):
+		var enemy = area as Enemy
+		if dir == -enemy.dir or enemy.target_position == target_position:
+			die()
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.is_in_group("endzone"):
 		winning = false
 		should_send = true
+
+func die() -> void:
+	get_tree().reload_current_scene()
