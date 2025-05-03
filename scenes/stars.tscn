@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://cv78xn6f4lnyh"]
+
+[ext_resource type="Script" path="res://scenes/stars.gd" id="1_yu120"]
+[ext_resource type="Texture2D" uid="uid://eagkcy1yi0eg" path="res://assets/star_off.tres" id="2_cdy4b"]
+[ext_resource type="Script" path="res://scenes/star.gd" id="2_hjll2"]
+[ext_resource type="Texture2D" uid="uid://dbj5dtjaidnnv" path="res://assets/star_on.tres" id="4_jeaws"]
+
+[node name="Stars" type="Control" node_paths=PackedStringArray("stars")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 68.0
+offset_top = 32.0
+offset_right = 68.0
+offset_bottom = 72.0
+script = ExtResource("1_yu120")
+stars = [NodePath("TextureRect"), NodePath("TextureRect3"), NodePath("TextureRect2")]
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+pivot_offset = Vector2(20, 20)
+texture = ExtResource("2_cdy4b")
+expand_mode = 2
+stretch_mode = 2
+script = ExtResource("2_hjll2")
+time = 2.0
+transition_type = 10
+scale_up_to = 2.0
+ON_STAR_TEXTURE = ExtResource("4_jeaws")
+OFF_STAR_TEXTURE = ExtResource("2_cdy4b")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 80.0
+offset_bottom = 40.0
+pivot_offset = Vector2(20, 20)
+texture = ExtResource("2_cdy4b")
+expand_mode = 2
+stretch_mode = 2
+script = ExtResource("2_hjll2")
+time = 2.0
+transition_type = 10
+scale_up_to = 2.0
+ON_STAR_TEXTURE = ExtResource("4_jeaws")
+OFF_STAR_TEXTURE = ExtResource("2_cdy4b")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 80.0
+offset_right = 120.0
+offset_bottom = 40.0
+pivot_offset = Vector2(20, 20)
+texture = ExtResource("2_cdy4b")
+expand_mode = 2
+stretch_mode = 2
+script = ExtResource("2_hjll2")
+time = 2.0
+transition_type = 10
+scale_up_to = 2.0
+ON_STAR_TEXTURE = ExtResource("4_jeaws")
+OFF_STAR_TEXTURE = ExtResource("2_cdy4b")

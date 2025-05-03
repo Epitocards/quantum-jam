@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://eagkcy1yi0eg"]
+
+[ext_resource type="Texture2D" uid="uid://b1lo6xewtte0d" path="res://assets/star_indicator.png" id="1_hf13p"]
+
+[resource]
+atlas = ExtResource("1_hf13p")
+region = Rect2(-5, -5, 0, 35)
+margin = Rect2(0, 0, 10, 0)
