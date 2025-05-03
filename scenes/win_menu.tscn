@@ -1,13 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://weqxyu3qxpgy"]
+[gd_scene load_steps=8 format=3 uid="uid://weqxyu3qxpgy"]
 
 [ext_resource type="Script" uid="uid://deoa2pnf2ls1s" path="res://scripts/win_menu.gd" id="1_7shsi"]
-[ext_resource type="Texture2D" uid="uid://b1lo6xewtte0d" path="res://assets/star_indicator.png" id="1_jx1is"]
 [ext_resource type="Texture2D" uid="uid://dmd0gfjstmkmc" path="res://assets/menu_icons.png" id="1_ki55t"]
 [ext_resource type="Theme" uid="uid://d12u73fhyywec" path="res://themes/game_menus.tres" id="2_dmaew"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jx1is"]
-atlas = ExtResource("1_jx1is")
-region = Rect2(0, 0, 32, 32)
+[ext_resource type="PackedScene" uid="uid://cv78xn6f4lnyh" path="res://scenes/stars.tscn" id="3_dmaew"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7shsi"]
 atlas = ExtResource("1_ki55t")
@@ -50,6 +46,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 theme = ExtResource("2_dmaew")
 
 [node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
@@ -57,22 +54,8 @@ layout_mode = 2
 text = "YOU WIN"
 horizontal_alignment = 1
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+[node name="stars" parent="PanelContainer/VBoxContainer" instance=ExtResource("3_dmaew")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_jx1is")
-
-[node name="TextureRect2" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_jx1is")
-
-[node name="TextureRect3" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_jx1is")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2

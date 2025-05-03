@@ -23,4 +23,4 @@ shadow_size = 2
 HBoxContainer/constants/separation = 12
 Label/font_sizes/font_size = 32
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_1aa8e")
-VBoxContainer/constants/separation = 10
+VBoxContainer/constants/separation = 24

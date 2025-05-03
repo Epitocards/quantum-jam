@@ -5,8 +5,9 @@ extends Control
 func _ready() -> void:
 	visible = false
 
-func show_menu() -> void:
+func show_menu(score : int) -> void:
 	visible = true
+	$PanelContainer/VBoxContainer/stars.star_count(score)
 
 func _on_play_button_pressed() -> void:
 	get_tree().change_scene_to_file(next_room)

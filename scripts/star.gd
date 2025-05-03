@@ -9,8 +9,8 @@ class_name Star extends TextureRect
 
 var default_transform : Transform2D
 
-@export var ON_STAR_TEXTURE : AtlasTexture
-@export var OFF_STAR_TEXTURE : AtlasTexture
+var ON_STAR_TEXTURE : AtlasTexture = preload("res://assets/star_on.tres")
+var OFF_STAR_TEXTURE : AtlasTexture = preload("res://assets/star_off.tres")
 
 
 func animate_star(_a : bool) -> void:
@@ -33,6 +33,9 @@ func animate_star(_a : bool) -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	default_transform = self.get_transform()
+	self.texture = OFF_STAR_TEXTURE
+	if from_center:
+		pivot_offset = size / 2
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

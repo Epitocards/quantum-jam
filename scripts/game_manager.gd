@@ -42,7 +42,7 @@ func win() -> void:
 	Saving.save(data)
 	for p in players:
 		p.pause()
-	$UI/WinMenu.show_menu()
+	$UI/WinMenu.show_menu(score)
 	canpause = false
 
 func get_score() -> int:
