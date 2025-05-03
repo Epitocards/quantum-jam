@@ -16,7 +16,7 @@ var dir : Vector2 = Vector2.ZERO
 func _ready() -> void:
 	state = PlayerState.PlayerState.IDLE
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	if state == PlayerState.PlayerState.MOVING:
 		$AnimatedSprite2D.play("moving")
 	else:
@@ -46,7 +46,7 @@ func move(direction : Vector2) -> bool:
 func pause() -> void:
 	state = PlayerState.PlayerState.PAUSED
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if state == PlayerState.PlayerState.MOVING:
 		self.global_position = self.global_position.move_toward(target_position, 2)
 		if self.global_position == target_position:

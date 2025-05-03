@@ -40,7 +40,6 @@ func check_activation_state() -> void:
 	var still_activated = false
 	var areas = $Area2D.get_overlapping_areas()
 	for overlapping_area in areas:
-		print(areas)
 		var over_area = overlapping_area.get_parent()
 		if over_area.is_in_group("player"):
 			still_activated = true

@@ -29,7 +29,7 @@ func win() -> void:
 func player_can_move(p : Player) -> bool:
 	return p.state == PlayerState.PlayerState.IDLE
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if players.all(player_can_move):
 		if Input.is_action_pressed("up"):
 			direction = Vector2.UP
