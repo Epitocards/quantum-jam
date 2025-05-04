@@ -5,6 +5,7 @@ extends Node2D
 
 var players_in_endzone_count = 0
 var players : Array[Player]
+var enemies: Array[Enemy]
 var step_count : int = 0
 var direction : Vector2
 var pausing = false
@@ -17,6 +18,12 @@ func  _ready() -> void:
 		if (casted):
 			casted.in_endzone.connect(_on_player_in_endzone)
 			players.append(casted)
+			
+	nodes = get_tree().get_nodes_in_group("enemy")
+	for node in nodes: 
+		var casted : Enemy = node as Enemy
+		if casted: 
+			enemies.append(casted)
 	$UI/PauseMenu.unpause.connect(unpause)
 	
 
@@ -58,7 +65,7 @@ func player_can_move(p : Player) -> bool:
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("reload"):
-			get_tree().reload_current_scene()
+		get_tree().reload_current_scene()
 	if Input.is_action_just_pressed("pause"):
 		if canpause:
 			if pausing:
@@ -83,6 +90,9 @@ func _process(delta: float) -> void:
 		for p in players:
 			var buffer = p.move(direction)
 			count_step = count_step or buffer
+		for e in enemies:
+			if count_step and e:
+				e.move()
 		if count_step:
 			step_count += 1
 
