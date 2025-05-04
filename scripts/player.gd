@@ -103,4 +103,9 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 		should_send = true
 
 func die() -> void:
+	$AnimationPlayer.play("death")
+	state = PlayerState.PlayerState.PAUSED
+
+func reload() -> void:
 	get_tree().reload_current_scene()
+	
