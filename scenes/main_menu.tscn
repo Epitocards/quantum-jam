@@ -27,7 +27,8 @@ layout_mode = 2
 [node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "GAME TITLE"
+text = "ENTAGLEMENT
+LAB"
 horizontal_alignment = 1
 
 [node name="play" type="Button" parent="PanelContainer/VBoxContainer"]
@@ -38,7 +39,7 @@ text = "PLAY"
 [node name="quit" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 12
 text = "QUIT"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/play" to="." method="_on_play_button_pressed"]
