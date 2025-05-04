@@ -55,7 +55,7 @@ bus = &"SFX"
 
 [node name="WinMenu" parent="UI" instance=ExtResource("5_ha73p")]
 visible = false
-next_room = "uid://furilopq0n5w"
+next_room = "uid://db7hqq428v0tj"
 
 [node name="PauseMenu" parent="UI" instance=ExtResource("6_hhfj6")]
 visible = false

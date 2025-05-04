@@ -40,6 +40,14 @@ level = "uid://h2ueu24de7mh"
 layout_mode = 2
 level = "uid://dioil387b6umg"
 
+[node name="level_choice4" parent="PanelContainer/HBoxContainer" instance=ExtResource("1_3shnc")]
+layout_mode = 2
+level = "uid://db7hqq428v0tj"
+
+[node name="level_choice5" parent="PanelContainer/HBoxContainer" instance=ExtResource("1_3shnc")]
+layout_mode = 2
+level = "uid://dy0lgwbw0voy2"
+
 [node name="leave_button" type="Button" parent="PanelContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2

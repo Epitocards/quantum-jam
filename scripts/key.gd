@@ -11,11 +11,14 @@ func _ready() -> void:
 		if door is Door:
 			self.key_collected.connect(door._on_key_collected)
 
-func collect() -> void:
+func emit_collection() -> void:
 	key_collected.emit(key_id)
+
+func collect() -> void:
 	if has_node("AnimationPlayer"):
 		$AnimationPlayer.play("collect")
 	else:
+		emit_collection()
 		await get_tree().create_timer(0.1).timeout
 		queue_free()
 

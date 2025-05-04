@@ -4,3 +4,5 @@
 
 [node name="ConnectionVisualizer" type="Node2D"]
 script = ExtResource("1_pej3m")
+single_connection_color = Color(1, 0.976471, 0, 0.376471)
+draw_in_game = true
