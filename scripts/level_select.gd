@@ -12,4 +12,5 @@ func _ready() -> void:
 
 
 func _on_leave_button_pressed() -> void:
+	ButtonSfx.play()
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

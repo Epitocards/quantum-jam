@@ -25,4 +25,5 @@ func show_for_score(score : int, name : int) -> void:
 
 
 func _on_button_pressed() -> void:
+	ButtonSfx.play()
 	get_tree().change_scene_to_file(level)

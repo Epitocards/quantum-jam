@@ -17,6 +17,8 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 [autoload]
 
 Saving="*res://scripts/saving.gd"
+Music="*res://scenes/music.tscn"
+ButtonSfx="*res://scenes/button_sfx.tscn"
 
 [display]
 
