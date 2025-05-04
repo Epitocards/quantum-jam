@@ -7,15 +7,19 @@ func _ready() -> void:
 	$HBoxContainer/star1.visible = false
 	$HBoxContainer/star2.visible = false
 	$HBoxContainer/star3.visible = false
+	$Button.disabled = false
 
 func show_for_score(score : int, name : int) -> void:
+	$Button.text = "LEVEL " + str(name)
 	if score < 0:
 		$HBoxContainer/star1.visible = false
 		$HBoxContainer/star2.visible = false
 		$HBoxContainer/star3.visible = false
+		if score == -2:
+			$Button.disabled = true
+			self.visible = true
 	else:
 		self.visible = true
-		$Button.text = "LEVEL " + str(name)
 		if score > 0:
 			$HBoxContainer/star1.visible = true
 		if score > 1:

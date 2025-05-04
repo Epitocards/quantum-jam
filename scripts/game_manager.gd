@@ -48,6 +48,8 @@ func win() -> void:
 		data[level_index - 1] = score
 	if data.size() == level_index:
 		data.append(0)
+	if data[level_index] < 0:
+		data[level_index] = 0
 	Saving.save(data)
 	for p in players:
 		p.pause()
@@ -96,6 +98,8 @@ func _process(delta: float) -> void:
 			if count_step and e:
 				e.move()
 		if count_step:
+			if has_node("ConnectionVisualizer"):
+				$ConnectionVisualizer.visible = false
 			step_count += 1
 
 func pause() -> void:
