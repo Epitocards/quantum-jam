@@ -27,7 +27,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "ENTAGLEMENT
+text = "ENTANGLEMENT
 LAB"
 horizontal_alignment = 1
 

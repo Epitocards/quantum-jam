@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dioil387b6umg"]
+[gd_scene load_steps=12 format=4 uid="uid://dioil387b6umg"]
 
 [ext_resource type="Script" uid="uid://b7nfqj4p2tlkc" path="res://scripts/game_manager.gd" id="1_ah8om"]
 [ext_resource type="Texture2D" uid="uid://p4n60ttn3j75" path="res://assets/test_tileset.png" id="2_p6vls"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://weqxyu3qxpgy" path="res://scenes/win_menu.tscn" id="5_ha73p"]
 [ext_resource type="PackedScene" uid="uid://cuyoovh4pa1lj" path="res://scenes/pause_menu.tscn" id="6_hhfj6"]
 [ext_resource type="PackedScene" uid="uid://bvlirmtwcb8p7" path="res://scenes/slippery_ground.tscn" id="6_p6vls"]
+[ext_resource type="AudioStream" uid="uid://dits5m7am12lm" path="res://assets/audio/SFX/portal.ogg" id="9_ha73p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qcd3b"]
 texture = ExtResource("2_p6vls")
@@ -45,6 +46,10 @@ position = Vector2(48, 48)
 
 [node name="end_zone2" parent="." instance=ExtResource("4_wae8j")]
 position = Vector2(368, 48)
+
+[node name="portal" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_ha73p")
+bus = &"SFX"
 
 [node name="UI" type="CanvasLayer" parent="."]
 

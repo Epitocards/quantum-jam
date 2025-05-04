@@ -31,6 +31,7 @@ func  _ready() -> void:
 func _on_player_in_endzone(value: bool) -> void:
 	if value:
 		players_in_endzone_count += 1
+		$portal.play()
 		if players_in_endzone_count == players.size():
 			win()
 	else:

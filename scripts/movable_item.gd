@@ -27,4 +27,5 @@ func try_push(push_direction: Vector2) -> bool:
 	current_direction = push_direction
 	target_position = global_position + push_direction * TILESIZE
 	state = PlayerState.PlayerState.MOVING
+	$push.play()
 	return true

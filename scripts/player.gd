@@ -50,6 +50,7 @@ func move(direction : Vector2) -> bool:
 	$RayCast2D.force_raycast_update()
 	if !$RayCast2D.is_colliding():
 		state = PlayerState.PlayerState.MOVING
+		$footsteps.play()
 		return true
 	else:
 		var collider = $RayCast2D.get_collider()
@@ -57,6 +58,7 @@ func move(direction : Vector2) -> bool:
 			var box = collider.get_parent() as MovableItem
 			if box.try_push(direction):
 				state = PlayerState.PlayerState.MOVING
+				$footsteps.play()
 				return true
 	target_position = global_position
 	return false

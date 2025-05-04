@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cv78xn6f4lnyh"]
+[gd_scene load_steps=5 format=3 uid="uid://cv78xn6f4lnyh"]
 
 [ext_resource type="Script" uid="uid://cho2x547l73pm" path="res://scripts/stars.gd" id="1_yu120"]
 [ext_resource type="Texture2D" uid="uid://eagkcy1yi0eg" path="res://assets/textures/star_off.tres" id="2_cdy4b"]
 [ext_resource type="Script" uid="uid://dcog3gndqy5db" path="res://scripts/star.gd" id="2_hjll2"]
+[ext_resource type="AudioStream" uid="uid://dkqeyputku608" path="res://assets/audio/SFX/star.ogg" id="4_784ub"]
 
 [node name="stars" type="HBoxContainer"]
 offset_right = 40.0
@@ -48,3 +49,13 @@ time = 2.0
 transition_type = 6
 scale_up_to = 1.7
 button = true
+
+[node name="star" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_784ub")
+bus = &"SFX"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.2
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

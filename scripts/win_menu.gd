@@ -6,6 +6,7 @@ func _ready() -> void:
 	visible = false
 
 func show_menu(score : int) -> void:
+	$jingle.play()
 	visible = true
 	$PanelContainer/VBoxContainer/stars.star_count(score)
 

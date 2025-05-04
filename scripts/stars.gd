@@ -10,5 +10,11 @@ func _ready() -> void:
 
 
 func star_count(count: int) -> void:
+	$Timer.start()
 	for i in range(count):
 		stars[i].animate_star(true)
+
+
+
+func _on_timer_timeout() -> void:
+	$star.play()

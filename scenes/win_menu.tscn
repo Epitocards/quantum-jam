@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://weqxyu3qxpgy"]
+[gd_scene load_steps=11 format=3 uid="uid://weqxyu3qxpgy"]
 
 [ext_resource type="Script" uid="uid://deoa2pnf2ls1s" path="res://scripts/win_menu.gd" id="1_7shsi"]
 [ext_resource type="Theme" uid="uid://d12u73fhyywec" path="res://themes/game_menus.tres" id="2_dmaew"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c768dvkgdnmwe" path="res://assets/textures/restart_button_hover.tres" id="7_a5eom"]
 [ext_resource type="Texture2D" uid="uid://bylivwk2au6r5" path="res://assets/textures/home_button.tres" id="8_a5eom"]
 [ext_resource type="Texture2D" uid="uid://baa27hxkli55h" path="res://assets/textures/home_button_hover.tres" id="9_0v1ms"]
+[ext_resource type="AudioStream" uid="uid://c8kstskqwb04m" path="res://assets/audio/SFX/jingle.ogg" id="10_0v1ms"]
 
 [node name="WinMenu" type="Control"]
 clip_contents = true
@@ -75,6 +76,10 @@ layout_mode = 2
 texture_normal = ExtResource("8_a5eom")
 texture_hover = ExtResource("9_0v1ms")
 stretch_mode = 0
+
+[node name="jingle" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_0v1ms")
+bus = &"SFX"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/play" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/restart" to="." method="_on_restart_button_pressed"]
