@@ -62,12 +62,22 @@ func activate() -> void:
 		sprite.modulate = Color(0.5, 0.5, 0.5)
 		if has_node("AnimationPlayer"):
 			$AnimationPlayer.play("press")
-		plate_activated.emit(door_id)
+		else:
+			plate_activated.emit(door_id)
+			$sound.play()
 
 func deactivate() -> void:
 	if is_activated:
 		is_activated = false
 		sprite.modulate = Color(1,1,1)
 		if has_node("AnimationPlayer"):
-			$AnimationPlayer.play("press")
-		plate_deactivated.emit(door_id)
+			$AnimationPlayer.play("unpress")
+		else:
+			plate_deactivated.emit(door_id)
+			$sound.play()
+
+func emit_activate() -> void:
+	plate_activated.emit(door_id)
+
+func emit_deactivate() -> void:
+	plate_deactivated.emit(door_id)

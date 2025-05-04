@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cy1hvanmufhs5"]
 
-[ext_resource type="AudioStream" uid="uid://bmvd3gi0ds75t" path="res://assets/audio/Music/raphaelle_la_musique_pitie.wav" id="1_05ggv"]
+[ext_resource type="AudioStream" uid="uid://bii3oco6i6fyr" path="res://assets/audio/Music/onelocation_menu.wav" id="1_05ggv"]
 
 [node name="Music" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_05ggv")

@@ -22,31 +22,48 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+[node name="HFlowContainer" type="HFlowContainer" parent="PanelContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-alignment = 1
 
-[node name="level_choice" parent="PanelContainer/HBoxContainer" instance=ExtResource("1_3shnc")]
+[node name="level_choice" parent="PanelContainer/HFlowContainer" instance=ExtResource("1_3shnc")]
 layout_mode = 2
 level = "uid://c61af448gwku1"
 
-[node name="level_choice2" parent="PanelContainer/HBoxContainer" instance=ExtResource("1_3shnc")]
+[node name="level_choice2" parent="PanelContainer/HFlowContainer" instance=ExtResource("1_3shnc")]
 layout_mode = 2
 level = "uid://h2ueu24de7mh"
 
-[node name="level_choice3" parent="PanelContainer/HBoxContainer" instance=ExtResource("1_3shnc")]
+[node name="level_choice3" parent="PanelContainer/HFlowContainer" instance=ExtResource("1_3shnc")]
 layout_mode = 2
 level = "uid://dioil387b6umg"
 
-[node name="level_choice4" parent="PanelContainer/HBoxContainer" instance=ExtResource("1_3shnc")]
+[node name="level_choice4" parent="PanelContainer/HFlowContainer" instance=ExtResource("1_3shnc")]
 layout_mode = 2
 level = "uid://db7hqq428v0tj"
 
-[node name="level_choice5" parent="PanelContainer/HBoxContainer" instance=ExtResource("1_3shnc")]
+[node name="level_choice5" parent="PanelContainer/HFlowContainer" instance=ExtResource("1_3shnc")]
 layout_mode = 2
 level = "uid://dy0lgwbw0voy2"
+
+[node name="level_choice6" parent="PanelContainer/HFlowContainer" instance=ExtResource("1_3shnc")]
+layout_mode = 2
+level = "uid://rksp3a8tnn6j"
+
+[node name="level_choice7" parent="PanelContainer/HFlowContainer" instance=ExtResource("1_3shnc")]
+layout_mode = 2
+level = "uid://dfo34hq6eyhcr"
+
+[node name="level_choice8" parent="PanelContainer/HFlowContainer" instance=ExtResource("1_3shnc")]
+layout_mode = 2
+level = "uid://dqufokkd0sc6s"
+
+[node name="level_choice9" parent="PanelContainer/HFlowContainer" instance=ExtResource("1_3shnc")]
+layout_mode = 2
+level = "uid://gv44rdxa3xid"
+
+[node name="level_choice10" parent="PanelContainer/HFlowContainer" instance=ExtResource("1_3shnc")]
+layout_mode = 2
+level = "uid://duhhxw7nr8jl0"
 
 [node name="leave_button" type="Button" parent="PanelContainer"]
 custom_minimum_size = Vector2(100, 0)

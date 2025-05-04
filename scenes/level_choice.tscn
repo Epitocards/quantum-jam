@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dnpfw53bavod1" path="res://assets/textures/small_star.tres" id="2_o3w2e"]
 
 [node name="level_choice" type="VBoxContainer"]
-custom_minimum_size = Vector2(104, 67)
+custom_minimum_size = Vector2(101, 67)
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_pf0lj")
