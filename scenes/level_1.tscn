@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cuyoovh4pa1lj" path="res://scenes/pause_menu.tscn" id="6_fcfvj"]
 [ext_resource type="AudioStream" uid="uid://dits5m7am12lm" path="res://assets/audio/SFX/portal.ogg" id="8_15mv3"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qcd3b"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_15mv3"]
 texture = ExtResource("2_fcfvj")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -19,7 +19,7 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_j6w7d"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_qcd3b")
+sources/0 = SubResource("TileSetAtlasSource_15mv3")
 
 [node name="test_level" type="Node2D"]
 script = ExtResource("1_4nkto")

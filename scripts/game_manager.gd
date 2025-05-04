@@ -38,6 +38,7 @@ func _on_player_in_endzone(value: bool) -> void:
 		players_in_endzone_count -= 1
 
 func win() -> void:
+	print(step_count)
 	var data = Saving.load()
 	var score = get_score()
 	while data.size() < level_index:
